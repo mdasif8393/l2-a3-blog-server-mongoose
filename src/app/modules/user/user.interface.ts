@@ -5,3 +5,8 @@ export interface IUser {
   role: 'admin' | 'user';
   isBlocked: boolean;
 }
+
+export type TLoginUser = {
+  email: string;
+  password: string;
+};
