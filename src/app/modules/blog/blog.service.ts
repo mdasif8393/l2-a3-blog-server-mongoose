@@ -1,6 +1,8 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../../config';
+import { User } from '../user/user.model';
 import { IBlog } from './blog.interface';
+import { Blog } from './blog.model';
 
 const createBlogIntoDB = async (token: string, blog: Partial<IBlog>) => {
   const decodedUser = jwt.verify(
@@ -8,11 +10,12 @@ const createBlogIntoDB = async (token: string, blog: Partial<IBlog>) => {
     config.jwt_access_secret as string,
   ) as JwtPayload;
 
-  console.log({ decodedUser });
+  const user = await User.findOne({ email: decodedUser?.email });
 
-  //   const result = (await Blog.create(blog)).populate('user');
+  blog.author = user?._id;
+  const result = (await Blog.create(blog)).populate('author');
 
-  //   return result;
+  return result;
 };
 
 export const BlogServices = {
