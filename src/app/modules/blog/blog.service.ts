@@ -1,8 +1,10 @@
 import httpStatus from 'http-status';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import QueryBuilder from '../../builder/QueryBuilder';
 import config from '../../config';
 import AppError from '../../errors/AppError';
 import { User } from '../user/user.model';
+import { blogSearchableFields } from './blog.constant';
 import { IBlog } from './blog.interface';
 import { Blog } from './blog.model';
 
@@ -83,8 +85,21 @@ const deleteBlogFromDB = async (_id: string, token: string) => {
   return result;
 };
 
+const getAllBlogsFromDB = async (query: Record<string, unknown>) => {
+  const blogQuery = new QueryBuilder(Blog.find().populate('author'), query)
+    .search(blogSearchableFields)
+    .filter()
+    .sort()
+    .paginate()
+    .fields();
+
+  const result = await blogQuery.modelQuery;
+  return result;
+};
+
 export const BlogServices = {
   createBlogIntoDB,
   updateBlogIntoDB,
   deleteBlogFromDB,
+  getAllBlogsFromDB,
 };
