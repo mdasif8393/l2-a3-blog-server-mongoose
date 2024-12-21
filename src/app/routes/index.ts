@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { BlogRoutes } from '../modules/blog/blog.route';
+import { BlogDeleteAdminRoute, BlogRoutes } from '../modules/blog/blog.route';
 import { BlockUserRoute, UserRoutes } from '../modules/user/user.route';
 
 const router = Router();
@@ -16,6 +16,10 @@ const moduleRoutes = [
   {
     path: '/admin/users',
     route: BlockUserRoute,
+  },
+  {
+    path: '/admin/blogs',
+    route: BlogDeleteAdminRoute,
   },
 ];
 
