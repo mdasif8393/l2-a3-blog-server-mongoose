@@ -1,28 +1,46 @@
-# Requirement Analysis and Entity-Relationship (ER) Diagram
-
-## Requirement Analysis
-
-([Requirement Analysis - 👈 Click Here](https://docs.google.com/document/d/10mkjS8boCQzW4xpsESyzwCCLJcM3hvLghyD_TeXPBx0/edit?usp=sharing))
-
-*Description*: This document represents the requirement analysis of part-1.
-
-## Entity-Relationship (ER) Diagram
-
-![UPDATED ER DIAGRAM](./Final.png)
-
-Description: This is an updated diagram illustrates the relationships among User, Student, Admin, Faculty, Academic Semester, Academic Faculty, Academic Department.
+<div align="center">
+  <h1>Assignment 3 Blog Server</h1>
+</div>
 
 ---
 
-![POSTMAN COLLECTION](./postman_collection.json)
+## Introduction
 
-Description: This is a postman collection of all the API endpoints.Download this , and import it in your postman if you needed.
+This project is a Fitness Equipment selling website.
 
----
+## Project Description
 
-### Uploading the Collection to Your Postman (If needed)
+This project is for selling fitness equipment products through this website. From this website Buyer can buy fitness equipment products through cash on delivery. The Landing page is designed with Banner, different categorize products, Features Products, rating of users, navbar and footer. User can add products to cart and can increase and decrese cart item. Products page is designed to show products. in product management page user can add, delete, update a product. In checkout page used have to submit his/her details to place order.
 
-1. Download the Postman collection (.json file) from the provided source.
-2. Open Postman and click on "Import" (located in the upper-left corner).
-3. Choose the downloaded file and confirm the import.
-"# l2-a3-blog-server-mongoose" 
+## Features
+
+- Search Products
+- Sort Price.
+- Add Product
+- Delete Product
+- Update Product
+- add to cart
+
+## Technology Stack
+
+- TypeScript.
+- React.
+- Redux
+- Tailwind CSS
+- ShadCn
+
+## Installation Guideline
+
+- npm install to install all packages
+- npm run dev to run project locally
+- npm run build to build project
+
+### Prerequisites
+
+- Vs Code
+
+### Installation Steps
+
+1. npm install to install all packages
+2. npm run dev to run project locally
+3. npm run build to build project
