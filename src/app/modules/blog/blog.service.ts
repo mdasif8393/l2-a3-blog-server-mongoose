@@ -49,7 +49,7 @@ const updateBlogIntoDB = async (
   if (blog?.author.toString() !== user?._id.toString()) {
     throw new AppError(
       httpStatus.BAD_REQUEST,
-      'You are not the of this Blog. You can not update this blog',
+      'You are not author of this Blog. You can not update this blog',
     );
   }
   const result = await Blog.findByIdAndUpdate(_id, payload, {
@@ -88,16 +88,8 @@ const deleteBlogFromDB = async (_id: string, token: string) => {
 const getAllBlogsFromDB = async (query: Record<string, unknown>) => {
   const blogQuery = new QueryBuilder(Blog.find().populate('author'), query)
     .search(blogSearchableFields)
-    .filter()
-    .sort()
-    .paginate()
-    .fields();
-
+    .sort();
   const result = await blogQuery.modelQuery;
-  return result;
-};
-const deleteBlogFromDbByAdmin = async (_id: string) => {
-  const result = await Blog.findByIdAndDelete(_id);
   return result;
 };
 
@@ -106,5 +98,4 @@ export const BlogServices = {
   updateBlogIntoDB,
   deleteBlogFromDB,
   getAllBlogsFromDB,
-  deleteBlogFromDbByAdmin,
 };

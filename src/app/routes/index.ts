@@ -1,6 +1,8 @@
 import { Router } from 'express';
-import { BlogDeleteAdminRoute, BlogRoutes } from '../modules/blog/blog.route';
-import { BlockUserRoute, UserRoutes } from '../modules/user/user.route';
+import { BlockUserRoute } from '../modules/BlockUserByAdmin/blockUserByAdmin.route';
+import { BlogRoutes } from '../modules/blog/blog.route';
+import { BlogDeleteAdminRoute } from '../modules/DeleteBlogByAdmin/deleteBlogByAdmin.route';
+import { UserRoutes } from '../modules/user/user.route';
 
 const router = Router();
 

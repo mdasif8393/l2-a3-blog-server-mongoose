@@ -6,12 +6,6 @@ import { BlogValidations } from './blog.validation';
 
 const router = express.Router();
 
-export const BlogDeleteAdminRoute = router.delete(
-  '/:id',
-  auth('admin'),
-  BlogControllers.deleteBlogByAdmin,
-);
-
 router.post(
   '/',
   auth('user'),

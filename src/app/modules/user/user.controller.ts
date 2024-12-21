@@ -34,19 +34,7 @@ const loginUser = catchAsync(async (req, res) => {
   });
 });
 
-const blockUser = catchAsync(async (req, res) => {
-  const result = await UserServices.blockUserFromDB(req.params.userId);
-
-  sendResponse(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'User blocked successfully',
-    data: null,
-  });
-});
-
 export const UserControllers = {
   createUser,
   loginUser,
-  blockUser,
 };
