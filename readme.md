@@ -6,41 +6,42 @@
 
 ## Introduction
 
-This project is a Fitness Equipment selling website.
+It's a backend project on Blog
 
 ## Project Description
 
-This project is for selling fitness equipment products through this website. From this website Buyer can buy fitness equipment products through cash on delivery. The Landing page is designed with Banner, different categorize products, Features Products, rating of users, navbar and footer. User can add products to cart and can increase and decrese cart item. Products page is designed to show products. in product management page user can add, delete, update a product. In checkout page used have to submit his/her details to place order.
+The goal of this project is to develop a backend for a blogging platform where users can write, update, and delete their blogs. The system will have two roles: Admin and User. The Admin has special permissions to manage users and their blogs, while users can perform CRUD operations on their own blogs. The backend will include secure authentication, role-based access control, and a public API for viewing blogs with search, sort, and filter functionalities.
 
 ## Features
 
-- Search Products
-- Sort Price.
-- Add Product
-- Delete Product
-- Update Product
-- add to cart
+- See Blogs and can search blogs
+- User Registration
+- User Login
+- Delete Blog by User
+- Update Blog ny User
+- Delete User By Admin
+- Delete Blog By Admin
 
 ## Technology Stack
 
 - TypeScript.
-- React.
-- Redux
-- Tailwind CSS
-- ShadCn
+- Mongoose
+- Express
+- Zod
+- Json Web Token
 
 ## Installation Guideline
 
+- download this app
 - npm install to install all packages
-- npm run dev to run project locally
+- npm run start:dev to run project locally
 - npm run build to build project
 
-### Prerequisites
+### Live Link of This Project
 
-- Vs Code
+- https://l2-a3-blog-server.vercel.app
 
 ### Installation Steps
 
-1. npm install to install all packages
-2. npm run dev to run project locally
-3. npm run build to build project
+- Admin email: admin@admin.com
+- Admin Password: securepassword
