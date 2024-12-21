@@ -64,9 +64,24 @@ const loginUser = async (payload: TLoginUser) => {
   };
 };
 
+const blockUserFromDB = async (_id: string) => {
+  const result = await User.findByIdAndUpdate(
+    _id,
+    {
+      isBlocked: true,
+    },
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
+  return result;
+};
+
 export const UserServices = {
   createUserIntoDb,
   loginUser,
+  blockUserFromDB,
 };
 
 /*

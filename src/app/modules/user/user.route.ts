@@ -1,4 +1,5 @@
 import express from 'express';
+import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserControllers } from './user.controller';
 import { UserValidations } from './user.validation';
@@ -18,3 +19,9 @@ router.post(
 );
 
 export const UserRoutes = router;
+
+export const BlockUserRoute = router.patch(
+  '/:userId/block',
+  auth('admin'),
+  UserControllers.blockUser,
+);
